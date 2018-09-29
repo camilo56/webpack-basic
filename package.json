@@ -5,18 +5,31 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
-    "dev": "npm run webpack -- --mode development --watch",
+    "dev": "npm run webpack -- --env.mode development --watch",
     "devEnv": "npm run webpack -- --env.mode development --watch",
     "prod": "npm run webpack -- --mode production",
     "prodEnv": "npm run webpack -- --env.mode production --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
-    "debugthis": "node --inspect --inspect-brk ./src/index.js"
-  },  
+    "debugthis": "node --inspect --inspect-brk ./src/index.js",
+    "server": "webpack-dev-server",
+    "serverDev": "npm run server -- --env.mode development --hot",
+    "serverProd": "npm run server -- --env.mode production --hot"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
   }
 }
